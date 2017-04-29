@@ -1,0 +1,314 @@
+/*********************************************
+		RESET
+*********************************************/
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	font-size: 1em;
+	list-style-type: none;
+	text-decoration: none;
+	outline: none;
+}
+
+
+/*********************************************
+		HEADER
+*********************************************/
+header {
+	width: 100%;
+	display: flex;
+	background-color: #024659;
+}
+
+h1 {
+	font-size: 2.6em;
+	color: #FFFFFF;
+	padding: 10px;
+}
+
+div#title {
+    width: 85%;
+}
+
+#login img {
+	width: 60px;
+	margin-left: 75%;
+	padding: 10px;
+}
+
+#login a {
+	color: white;
+	margin-left: -70px;
+}
+
+#title h1:hover {
+	color: #D7D4D7;
+}
+
+#login img:hover {
+	/*padding-bottom: 2px;*/
+	border-bottom: #66b5e9 2px solid;
+}
+
+
+/*********************************************
+		MENU
+*********************************************/
+nav {
+	background-color: #EF4C2B;
+	display: flex;
+}
+
+ul li a {
+	color: #FFFFFF;
+	margin-left: 30px;
+	font-size: 1.2em;
+}
+
+ul {
+	display: flex;
+	padding: 10px;
+}
+
+ul li a:hover {
+	color: #66b5e9;
+	padding-bottom: 2px;
+	border-bottom: #66b5e9 2px solid;
+}
+
+ul li.type-current a {
+	padding-bottom: 2px;
+	border-bottom: #024659 2px solid;
+	color: #024659;
+}
+
+/* Search */
+#search {
+	position: relative;
+	float: left;
+	width: 30%;
+	background-color: #f95939;
+	margin-left: 30%;
+}
+
+.input-search input {
+    width: 100%;
+    /*max-width: 100%;
+    min-width: 100%;*/
+    /*margin-left: 20px;*/
+    padding: 8px 0px 0px 50px;
+    border: none;
+    /*font-size: 1.2em;*/
+    color: #FFFFFF;
+    background-color: transparent;
+}
+
+.input-validate input {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	width: 20px;
+	height: 20px;
+	/*border: none;*/
+	text-indent: -9999px;
+	background: url('../images/search.png') no-repeat 0 0;
+	cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+	color: #024659;
+}
+
+
+/*********************************************
+		SECTION INDEX
+*********************************************/
+#container {
+	background-color: #D7D4D7;
+	width: 100%;
+	/*display: flex;*/
+	overflow: hidden;
+	clear: both;
+}
+
+	#article {
+    /*width: 60%;*/
+    margin-left: 2.5%;
+    padding-top: 20px;
+	}
+
+	#article h3 {
+		font-size: 2em;
+		color: #024659;
+		padding-bottom: 20px;
+	}
+
+		#list-jeux ul li {
+		    float: left;
+		    width: 30%;
+		    margin-right: 2.5%;
+		    margin-bottom: 20px;
+		}
+
+		.game a {
+			margin-left: 0;
+			color: #024659;
+		}
+
+		.game a:hover {
+			border-bottom: 0px;
+			color: #66b5e9;
+		}
+		#list-jeux .game img {
+			width: 200px;
+			height: 120px;
+		}
+
+		#list-jeux .game img:hover {
+		    opacity: .8;
+		}
+
+	#aside img {
+		overflow: hidden;
+		clear: both;
+		float: right;
+		width: 800px;
+	}
+
+
+/*********************************************
+		SECTION LOGIN
+*********************************************/
+h2 {
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#corps {
+	width: 100%;
+	display: flex;
+}
+
+.colonne {
+	margin: 20px;
+	padding: 10px;
+	background-color: silver;
+	border-radius: 10px;
+}
+
+span {
+	color: red;
+}
+
+#connexion {
+	width: 40%;
+	height: 40%;
+}
+
+#inscription {
+	width: 60%;
+}
+
+fieldset {
+	border-color: white;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+legend {
+	text-align: right;
+	padding-right: 5px;
+}
+input {
+	padding: 5px;
+	margin: 5px;
+}
+
+label {
+	padding: 20px;
+}
+
+.bouton {
+	border-radius: 6px;
+	width: 100px;
+}
+
+.boutons {
+	text-align: right;
+}
+
+#monkey {
+    margin-left: 120px;
+    max-width: 50%;
+}
+
+
+/*********************************************
+		SECTION FICHE
+*********************************************/
+#fiche {
+	width: 100%;
+	color: #024659;
+	display:
+}
+
+#fiche h1 {
+	color: #024659
+}
+
+#fiche div {
+	padding: 10px;
+}
+
+#content-fiche {
+	display: flex;
+}
+
+#image-fiche {
+	max-width: 500px;
+}
+
+
+/*********************************************
+		SECTION PROFIL
+*********************************************/
+#titre-profil {
+	color: #024659;
+}
+
+#logoProfil {
+	padding: 20px;
+}
+.profil {
+	display: flex;
+	background-color: silver;
+}
+
+.profil a {
+	font-size: 1.2em;
+	color: blue;
+	padding: 20px;
+}
+
+/*********************************************
+		SECTION ADD-GAME
+*********************************************/
+.fieldset-addGame {
+	width: 50%;
+}
+
+
+/*********************************************
+		FOOTER
+*********************************************/
+footer {
+	width: 100%;
+	background-color: #024659;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+#footer {
+	padding: 20px;
+}
