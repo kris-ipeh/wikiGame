@@ -1,3 +1,52 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
+--
+-- Client :  127.0.0.1
+-- Généré le :  Sam 06 Mai 2017 à 09:20
+-- Version du serveur :  5.7.14
+-- Version de PHP :  5.6.25
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `jeux`
+--
+CREATE DATABASE IF NOT EXISTS `jeux` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `jeux`;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `genre`
+--
+
+CREATE TABLE IF NOT EXISTS `genre` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+
+--
+-- Vider la table avant d'insérer `genre`
+--
+
+TRUNCATE TABLE `genre`;
+--
+-- Contenu de la table `genre`
+--
+
+INSERT INTO `genre` (`id`, `type`) VALUES
+(1, 'dés'),
+(2, 'cartes'),
+(3, 'fléchettes');
 
 -- --------------------------------------------------------
 
@@ -5,15 +54,21 @@
 -- Structure de la table `jeux`
 --
 
-CREATE TABLE `jeux` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `jeux` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   `regle` text,
   `nbr_joueur` int(2) DEFAULT NULL,
   `image` varchar(50) NOT NULL,
-  `id_type` int(2) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `id_type` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
+--
+-- Vider la table avant d'insérer `jeux`
+--
+
+TRUNCATE TABLE `jeux`;
 --
 -- Contenu de la table `jeux`
 --
@@ -25,4 +80,27 @@ INSERT INTO `jeux` (`id`, `nom`, `regle`, `nbr_joueur`, `image`, `id_type`) VALU
 (4, 'poker', 'Une main de poker est toujours constituée de 5 cartes. La combinaison la plus forte empoche le pot. Au Texas Hold’em vous devez composer la meilleure main possible à l’aide de vos deux cartes et des cinq cartes communes.\r\n\r\nVos deux cartes sont cachées et donc ne sont connues que par vous.\r\n\r\nDans un casino ou un cercle, la position du donneur est représentée par un palet blanc (Dealer) qui matérialise le donneur parmi les joueurs. On l’appelle le bouton. Il tourne dans le sens des aiguilles d’une montre après chaque coup.\r\n\r\nLe joueur assis à la place du bouton est à la place du donneur et doit jouer en dernier. Les deux joueurs à la gauche du donneur doivent miser en premier. Avant de recevoir leurs cartes, les joueurs doivent placer les mises obligatoires. Le premier joueur à la gauche du donneur place la petite blind et le second la grosse blind. La petite blind vaut généralement la moitié de la grosse blind. Après le placement de blinds, le donneur distribue les cartes.\r\n\r\nL’action débute avec le joueur à la gauche du big blind. Ce joueur a les possibilités suivantes : ce joueur peut faire un Call (suivre en français), ce qui signifie parier la même quantité que le big blind. Il peut faire un Raise (relancer en français) du montant de son choix (en No Limit). Ou il peut faire Fold (passer). Le joueur jette ses cartes et sort du coup.\r\n\r\nLes joueurs ont ensuite les possibilités suivantes : suivre la mise précédente, relancer ou surrelancer s’il y a déjà une relance ou de passer leur main sans rien perdre. La parole revient à la petite blind et le dernier joueur à parler au premier tour d’enchère est la grosse blind qui a la possibilité de relancer.\r\n\r\nAprès le premier tour d’enchère, tous les jetons sont placés au centre de la table et le Flop est ouvert par le donneur (le Flop est les trois premières cartes posées au centre de la table). Avec vos deux cartes cachées, vous devez faire la meilleure combinaison possible en utilisant ou pas les nouvelles cartes utilisables par tous. Si le Flop vous est défavorable, vous avez beaucoup de chances de perdre le coup et il serait préférable de jeter ses cartes. Par contre, si le Flop vous convient, continuez à attaquer le coup. Exemple : Soyez agressif avec une main comme Paire max, Kicker max, ou un tirage max. Le Kicker est très important au Texas Hold’em.\r\n\r\nLes enchères commencent avec le joueur à la gauche du donneur. Les joueurs peuvent miser ou checker (ne rien miser tout en restant dans le coup).\r\n\r\nAprès le Flop, c’est au tour du Turn, la quatrième carte mise au centre de la table. Une fois que les joueurs ont bien vu cette quatrième carte, le troisième tour des enchères reprend. Tous les joueurs ayant encore des cartes obtiennent une chance de voir la cinquième carte finale qu’on appelle « the river » (la rivière).\r\n\r\nLe quatrième et dernier tour des enchères commence. Quand le quatrième tour des enchères est terminé, tous les joueurs restants doivent retourner leurs cartes pour déterminer le gagnant de la partie. Vous gagnez le pot si vous avez la meilleure combinaison de cinq cartes en utilisant deux, une ou aucune carte de votre main.', 2, 'cartes.jpg', 2),
 (5, '501', 'Chaque joueur débute avec un capital de 501 points. On lance alors une volée de trois fléchettes (ou moins), on additionne le score de ces dernières et soustrait le résultat à son capital pour arriver le premier à zéro exactement (sans dépasser). Pour arriver à zéro on doit impérativement lancer sa dernière fléchette de la manche dans un secteur « double » ou dans le double centre (terme double out du nom de la règle). Si l\'on dépasse zéro toute la volée en cours est annulée. Par exemple, un joueur au capital de 24 doit, pour finir la manche, envoyer une fléchette dans le « double 12 ». Il peut également effectuer d\'autres combinaisons tant qu\'il termine avec un double (il peut ainsi faire, dans l\'exemple précité, un simple dans une zone à 4 points et un double dans une zone à 10 points). S\'il dépasse zéro, on dit qu\'il « casse » et son capital de 24 points reste alors inchangé. Il n\'est plus possible de gagner la manche si l\'on arrive à 1.\r\n\r\nUn match se joue en deux ou trois manches gagnantes, voire davantage pour les finales. En plus des joueurs, la partie se déroule avec un "scoreur" (personne qui s\'occupe de compter les manches).\r\n\r\nUne partie de 501 se termine au minimum en 3 volées (9 fléchettes en tout), et est alors appelée nine-darter. Elle peut se réaliser par exemple comme suit :\r\n\r\npremière volée : 3 triples vingt\r\ndeuxième volée : 3 triples vingt\r\ntroisième volée : triple vingt, triple dix-neuf, double douze', 2, 'fléchettes.jpg', 3),
 (6, 'killer', 'Ce jeu se pratique à plusieurs, l\'idéal étant de jouer à 4 joueurs minimum. Le but de ce jeu est de rester le dernier joueur en vie. Chaque joueur commence par lancer une fléchette de sa mauvaise main pour définir son numéro personnel. Celui-ci est unique : deux joueurs ne peuvent avoir le même numéro. Chaque joueur possède au début 0 point et la première partie du jeu consiste tout d\'abord à marquer trois points en touchant son numéro personnel, un double comptant deux points et un triple trois points (une variante existe où seuls les doubles comptent, et valent 1points) . Une fois les trois points atteints, le joueur est maintenant considéré comme killer. Son but est de faire diminuer les points des autres joueurs en visant leur numéro. Les règles concernant les points sont :\r\n\r\nUn joueur ayant un score négatif est considéré comme mort.\r\nUn killer ayant perdu un point perd son statut et doit réviser son numéro.\r\nLa partie se termine lorsqu\'il n\'y a plus qu\'un joueur en vie si et seulement s\'il a annoncé pour éliminer.', 2, 'darts.jpg', 3),
-(7, 'cricket', 'C\'est un jeu plus convivial pour jouer entre amis. Le but est de réussir à faire trois 15, trois 16, trois 17, trois 18, trois 19, trois 20 et trois bulls. On note au fur et à mesure sur une feuille de papier. Bien sûr, un double comptera pour 2 et un triple comptera pour trois. Le vainqueur est celui qui a « fermé » en premier toutes ses valeurs.\r\n\r\nIl existe une variante avec points : lorsqu\'un joueur a fermé une valeur avant son adversaire, toute nouvelle fléchette qu\'il place dans cette valeur lui rapporte le nombre de points correspondant. Le jeu s\'arrête quand un joueur a fermé l\'ensemble des valeurs et le vainqueur est le joueur ayant le plus gros score.\r\n\r\nUne variante nécessitant plus de stratégie peut être utilisée lorsqu\'on joue à plus de deux joueurs : elle consiste à distribuer les points à tous les joueurs n\'ayant pas encore fermé une valeur au lieu de les engranger soi même. Dans ce cas, le vainqueur est le joueur qui possède le moins de points à la fin de la partie.', 2, 'dart_guiness.jpg', 3);
+(7, 'cricket', 'C\'est un jeu plus convivial pour jouer entre amis. Le but est de réussir à faire trois 15, trois 16, trois 17, trois 18, trois 19, trois 20 et trois bulls. On note au fur et à mesure sur une feuille de papier. Bien sûr, un double comptera pour 2 et un triple comptera pour trois. Le vainqueur est celui qui a « fermé » en premier toutes ses valeurs.\r\n\r\nIl existe une variante avec points : lorsqu\'un joueur a fermé une valeur avant son adversaire, toute nouvelle fléchette qu\'il place dans cette valeur lui rapporte le nombre de points correspondant. Le jeu s\'arrête quand un joueur a fermé l\'ensemble des valeurs et le vainqueur est le joueur ayant le plus gros score.\r\n\r\nUne variante nécessitant plus de stratégie peut être utilisée lorsqu\'on joue à plus de deux joueurs : elle consiste à distribuer les points à tous les joueurs n\'ayant pas encore fermé une valeur au lieu de les engranger soi même. Dans ce cas, le vainqueur est le joueur qui possède le moins de points à la fin de la partie.', 2, 'dart_guiness.jpg', 3),
+(9, 'tarot', 'Un jeu de tarot est composé de 56 cartes d\'une valeur de l\'As au Roi comme un jeu traditionnel (trèfle, cœur, carreau, pique). La particularité réside dans le fait qu\'une carte supplémentaire « Le cavalier » se situe entre le valet et la dame. Les atouts sont quand à eux au nombre de 21 (de 1 à 21).', 3, 'taro.png', 2),
+(10, 'belote', 'Si un joueur ne peut pas fournir de carte de la couleur demandée, il doit alors couper à l\'atout. ... Il est également possible de ne pas jouer de l\'atout dans le cas où le partenaire est maître du pli alors que l\'on ne possède pas de cartes de la couleur demandée.', 4, 'belote.jpg', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utilisateurs`
+--
+
+CREATE TABLE IF NOT EXISTS `utilisateurs` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `name` varchar(25) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `ville` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
