@@ -32,14 +32,14 @@ div#title {
 }
 
 #login img {
-	width: 60px;
+	width: 100px;
 	margin-left: 75%;
-	padding: 10px;
+	padding: 20px;
 }
 
 #login a {
 	color: white;
-	margin-left: -70px;
+	margin-left: -80px;
 }
 
 #title h1:hover {
@@ -87,9 +87,9 @@ ul li.type-current a {
 #search {
 	position: relative;
 	float: left;
-	width: 30%;
+	width: 25%;
 	background-color: #f95939;
-	margin-left: 30%;
+	margin-left: 40%;
 }
 
 .input-search input {
@@ -117,7 +117,7 @@ ul li.type-current a {
 }
 
 ::-webkit-input-placeholder {
-	color: #024659;
+	color: #fff;
 }
 
 
