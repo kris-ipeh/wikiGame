@@ -1,2 +1,1 @@
-getElementById('#login');
-console.log();
+
