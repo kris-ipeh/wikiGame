@@ -1,9 +1,8 @@
 <?php include('templates/header.php'); ?>
 
-
-		<!-- LISTING DES JEUX -->
 <section>
 	<div id="container">
+		<!-- LISTING DES JEUX -->
 		<div id="article">
 			<h3>Liste des jeux</h3>
 			<div id="list-jeux">
@@ -15,6 +14,7 @@
 							searchGame(listGame(), 'search', 'nom') == $value['nom'] ||
 							searchGame(listGame(), 'type', 'type') == $value['type']
 						) { ?>
+
 							<li>
 								<div class="game">
 									<a href="/projets_perso/Jeux/templates/fiche.php?id=<?= $key; ?>" title="<?= $value['nom']; ?>">
@@ -30,7 +30,6 @@
 			</div>
 		</div>
 
-
 		<!-- IMAGE DE LA SIDEBAR -->
 		<div id="aside">
 			<img src="images/snatch_franky.png" alt="Franky four finger - Snatch">
@@ -38,6 +37,4 @@
 	</div>
 </section>
 
-
-<?php
-include('templates/footer.php');?>
+<?php include('templates/footer.php');?>

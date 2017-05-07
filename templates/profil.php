@@ -1,7 +1,6 @@
 <?php
   $url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
-  include($url . 'templates/header.php');
-?>
+  include($url . 'templates/header.php'); ?>
 
 <section>
   <h1 id="titre-profil">Bienvenue <?= nomSession() ?></h1>
@@ -19,7 +18,3 @@
 </section>
 
 <?php include($url . 'templates/footer.php'); ?>
-
-
-
-

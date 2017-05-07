@@ -1,6 +1,7 @@
 <?php
-  $url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
-  include($url . 'templates/header.php');
+
+$url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
+include($url . 'templates/header.php');
 
 // On détruit les variables de notre session
 session_unset ();
