@@ -1,7 +1,5 @@
 <?php
-//$url = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 $url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
-//var_dump($url);
 
 include($url . 'libs/database.php');
 include($url . 'libs/functions.php'); ?>
