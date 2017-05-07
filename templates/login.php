@@ -1,9 +1,11 @@
 <?php
   $url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
-  include($url . 'templates/header.php');
-?>
+  include($url . 'templates/header.php'); ?>
+
 
 <section id="corps">
+
+<!-- INSCRIPTION -->
 	<div id="inscription" class="colonne">
 		<h2>Inscris toi vite!!</h2>
 		<div class="form">
@@ -11,19 +13,19 @@
 				<div class="champs">
 					<fieldset>
 						<legend>Infos obligatoires</legend>
-			<!--name-->
+						<!--name-->
 						<div class="form-field">
 							<label for="name">Nom : </label>
 							<input type="text" name="name" id="name" placeholder="Nom" value="<?=valueForm('name'); ?>" required="" />
 						</div>
 
-			<!--email-->
+						<!--email-->
 						<div class="form-field">
 							<label for="email">Adresse mail : </label>
 							<input type="email" name="email" id="email" placeholder="pseudo@monsite.com"  value="<?=valueForm('email'); ?>" required="" />
 						</div>
 
-			<!--password-->
+						<!--password-->
 						<div class="form-field">
 							<label for="password">Votre mot de passe : </label>
 							<input type="password" name="password" id="password" placeholder="Mon mot de passe" required="" />
@@ -32,16 +34,15 @@
 
 					<fieldset>
 	       				<legend>Pour mieux te connaitre</legend>
-	       	<!--adresse-->
+	       				<!--adresse-->
 	       				<div class="form-field">
 	       					<label for="adresse">Ville / Village : </label>
 	       					<input type="text" name="ville" id="adresse"  value="<?=valueForm('ville'); ?>" placeholder="Baiona">
 	       				</div>
-
 					</fieldset>
 				</div>
 
-			<!--boutons-->
+				<!--boutons-->
 				<div class="boutons">
 					<input type="reset" name="reset" class="bouton" id="reset">
 					<input type="submit" name="inscription" value="Envoyer" class="bouton" id="submit">
@@ -50,6 +51,7 @@
 		</div>
 	</div>
 
+<!-- CONNEXION  -->
 	<div id="connexion" class="colonne">
 		<h2>Connecte toi sur ton profil</h2>
 		<div class="form">

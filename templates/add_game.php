@@ -1,7 +1,6 @@
  <?php
   $url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
-  include($url . 'templates/header.php');
-?>
+  include($url . 'templates/header.php'); ?>
 
 <aside>
   <h3>Ajouter un jeu</h3>

@@ -1,8 +1,6 @@
 <?php
-//$url = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 $url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
 //var_dump($url);
-
 include($url . 'libs/database.php');
 include($url . 'libs/functions.php'); ?>
 
@@ -16,9 +14,10 @@ include($url . 'libs/functions.php'); ?>
 	<link rel="stylesheet" href="/projets_perso/Jeux/css/style.css">
 </head>
 
+
 <body class="container-fluid">
 
-			<!-- HEADER -->
+	<!--      HEADER      -->
 	<header>
 		<div id="title">
 			<a href="/projets_perso/Jeux/index.php"><h1>Le temps d'un jeu</h1></a>
@@ -34,7 +33,7 @@ include($url . 'libs/functions.php'); ?>
 	</header>
 
 
-			<!-- MENU TYPE DE JEUX -->
+	<!--    MENU TYPE DE JEUX    -->
 	<nav>
 		<ul>
 			<li<?= (empty($_GET['type']) && empty($_GET['search'])) ? ' class="type-current"' : ''; ?>>
@@ -49,7 +48,7 @@ include($url . 'libs/functions.php'); ?>
 		</ul>
 
 
-			<!-- MOTEUR DE RECHERCHE PAR NOM DE JEU -->
+		<!--  MOTEUR DE RECHERCHE PAR NOM DE JEU  -->
 		<div id="search">
 			<form action="/projets_perso/Jeux/index.php" method="get" autocomplete="off">
 				<div class="input-search">
@@ -61,12 +60,3 @@ include($url . 'libs/functions.php'); ?>
 			</form>
 		</div>
 	</nav>
-
-
-			<!-- AFFICHAGE DU PROFIL SI CONNECTE
-	<div>
-		<h2><?
-			if (connexion() = true) {
-				echo $result;
-			} ; ?></h2>
-	</div>-->
