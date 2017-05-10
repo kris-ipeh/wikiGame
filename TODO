@@ -8,12 +8,8 @@
 
 ////  PHP  SQL   ////
 * empecher les accès profil et ajout de jeux si pas connectés (faille url)
-* Faire une redirection après l'ajout d'un jeu
-* Ajouter la possibilité de se connecter ou par pseudo ou par email
+* sécuriser le formulaire et les requêtes
 * Pouvoir modifier le profil
 * Pouvoir modifier un jeu ou le supprimer
 * ajouter à la base de donnée des jeux
   - l'utilisateur qui l'a créé
-  - la date de création
-* ajouter à la base de donnée des utilisateur
-  - la date d'inscription

@@ -34,13 +34,13 @@ function listGame() {
 	//	CONNEXION	//
 // Redirection ou message d'erreur après validation du formulaire
 $erreurLogin="";
-$erreurMail="";
+$erreurName="";
 $erreurPassword="";
 
-	if (!empty($_POST['connectEmail']) && (!empty($_POST['connectPassword']))) {
-			$email = $_POST['connectEmail'];
+	if (!empty($_POST['connectName']) && (!empty($_POST['connectPassword']))) {
+			$name = $_POST['connectName'];
 			$motdepasse = $_POST['connectPassword'];
-			$requete = $db->query('SELECT * FROM utilisateurs WHERE email = "'.$email.'" AND password = "'.sha1($motdepasse).'"');
+			$requete = $db->query('SELECT * FROM utilisateurs WHERE name = "'.$name.'" AND password = "'.sha1($motdepasse).'"');
 
 		if (!empty($result = $requete->fetch())) {
 			$_SESSION['auth'] = $result;
@@ -50,11 +50,11 @@ $erreurPassword="";
 			$erreurLogin = "Vous n'êtes pas inscrit.";
 		}
 	}
-	elseif (isset($_POST['connectEmail']) && empty($_POST['connectEmail']) && empty($_POST['connectPassword'])) {
-		$erreurLogin = "Renseignez l'email et le mot de passe";
+	elseif (isset($_POST['connectName']) && empty($_POST['connectName']) && empty($_POST['connectPassword'])) {
+		$erreurLogin = "Renseignez le nom et le mot de passe";
 	}
-	elseif (isset($_POST['connectEmail']) && empty($_POST['connectEmail'])) {
-	 $erreurMail ="Renseignez un email ";
+	elseif (isset($_POST['connectName']) && empty($_POST['connectName'])) {
+	 $erreurName ="Renseignez un nom ";
 	}
 	elseif (isset($_POST['connectPassword']) && empty($_POST['connectPassword'])) {
 	$erreurPassword = "Entrez un mot de passe ";
@@ -63,13 +63,14 @@ $erreurPassword="";
 
 //  INSCRIPTION  //
 	if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['password'])) {
-		$sql = 'INSERT INTO utilisateurs (name, email, password, ville) VALUES (:name, :email, :password, :ville)';
+		$sql = 'INSERT INTO utilisateurs (name, email, password, ville, date_inscription) VALUES (:name, :email, :password, :ville , NOW())';
 		$request = $db->prepare($sql);
 		$result = $request->execute(array(
 			"name" 			=> $_POST['name'],
 			"email"			=> $_POST['email'],
 			"password" 	=> sha1($_POST['password']),
-			"ville" 		=> $_POST['ville'] ));
+			"ville" 		=> $_POST['ville']
+		));
 		$name = $_POST['name'];
 		$requete = $db->query('SELECT * FROM utilisateurs WHERE name = "'.$name.'"');
 		if (!empty($result = $requete->fetch())) {
@@ -78,7 +79,7 @@ $erreurPassword="";
 			unset($_POST);
 			die;
 		} else {
-			$erreurLogin = "Vous n'êtes pas inscrit.";
+			$erreurLogin = "Vous n'êtes pas inscrit, veuillez vérifiez vos informations.";
 		}
 	}
 
@@ -95,9 +96,6 @@ function nomSession() {
 
 
 	//	ADD GAME  //
-	//	EN CHANTIER
-	// Probleme d'ajout de type de jeu dans une table secondaire
-
 if (!empty($_SESSION) && !empty($_POST['gameName']) && !empty($_POST['gameType']) && !empty($_POST['nbrJoueur']) && !empty($_POST['regleDuJeu'])) {
 	//checker si la catégorie existe, sinon la rajouter
 	$sql = 'SELECT DISTINCT genre.type FROM jeux JOIN genre WHERE id_type = genre.id';
@@ -116,7 +114,7 @@ if (!empty($_SESSION) && !empty($_POST['gameName']) && !empty($_POST['gameType']
 		$id_type = $result['id'];
 		}
 	}
-	$sql = 'INSERT INTO jeux (nom, regle, nbr_joueur, id_type, image) VALUES (:nom, :regle, :nbr_joueur, :id_type, :image)';
+	$sql = 'INSERT INTO jeux (nom, regle, nbr_joueur, id_type, image, date_creation) VALUES (:nom, :regle, :nbr_joueur, :id_type, :image, NOW())';
 	$request = $db->prepare($sql);
 	$result = $request->execute(array(
 		"nom" 				=> $_POST['gameName'],
@@ -124,6 +122,14 @@ if (!empty($_SESSION) && !empty($_POST['gameName']) && !empty($_POST['gameType']
 		"nbr_joueur" 	=> $_POST['nbrJoueur'],
 		"id_type" 		=> $id_type,
 		"image" 			=> $_POST['image']));
+
+	$request = $db->query('SELECT COUNT(*)-1 AS id_game FROM jeux');
+	$result = $request->fetch();
+	$id_game = $result['id_game'];
+
+  header("Location: fiche.php?id=".($id_game));
+	unset($_POST);
+	die;
 }
 
 

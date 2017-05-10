@@ -61,8 +61,8 @@
 					<div class="champs">
 						<div class="form-field">
 							<span class="erreur"><?= $erreurLogin ;?></span><br />
-							<label for="connectEmail">adresse mail : </label>
-							<input type="email" name="connectEmail" id="connectEmail" value="<?=valueForm('connectEmail'); ?>"><span class="erreur"><?= $erreurMail ;?></span>
+							<label for="connectName">nom : </label>
+							<input type="name" name="connectName" id="connectName" value="<?=valueForm('connectName'); ?>"><span class="erreur"><?= $erreurName ;?></span>
 						</div>
 						<div class="form-field">
 							<label for="connectPassword">mot de passe : </label>
