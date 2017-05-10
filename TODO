@@ -1,19 +1,19 @@
+////  HTML  CSS   ////
 * Chemins relatifs et absolus
-
-* Ajouter la possibilité de se connecter ou par pseudo ou par email
-
-* Pouvoir modifier le profil
-
+* redirection vers un site de jeu en ligne
+* rendre l' appli web responsive
 * styliser les fiches profils
-
 * styliser les fiches jeux
 
+
+////  PHP  SQL   ////
+* empecher les accès profil et ajout de jeux si pas connectés (faille url)
 * Faire une redirection après l'ajout d'un jeu
-
+* Ajouter la possibilité de se connecter ou par pseudo ou par email
+* Pouvoir modifier le profil
 * Pouvoir modifier un jeu ou le supprimer
-
-* redirection vers un vrai site de jeu
-
-* rendre l' appli web responsive
-
-* rajouter du javascript
+* ajouter à la base de donnée des jeux
+  - l'utilisateur qui l'a créé
+  - la date de création
+* ajouter à la base de donnée des utilisateur
+  - la date d'inscription
