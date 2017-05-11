@@ -31,7 +31,15 @@ function listGame() {
 	}
 
 
-	//	CONNEXION	//
+// Fonction qui retient les valeurs du formulaire
+function valueForm($field) {
+	if (!empty($_POST[$field])) {
+		return $_POST[$field];
+	}
+}
+
+
+//	CONNEXION	//
 // Redirection ou message d'erreur après validation du formulaire
 $erreurLogin="";
 $erreurName="";
@@ -114,15 +122,31 @@ if (!empty($_SESSION) && !empty($_POST['gameName']) && !empty($_POST['gameType']
 		$id_type = $result['id'];
 		}
 	}
-	$sql = 'INSERT INTO jeux (nom, regle, nbr_joueur, id_type, image, date_creation) VALUES (:nom, :regle, :nbr_joueur, :id_type, :image, NOW())';
+
+	//on récupère l'id de l'utilisateur
+	$nomUser = nomSession();
+	$sql =  'SELECT id FROM utilisateurs WHERE name ="'.$nomUser.'"';
+	$request = $db->query($sql);
+	if (!empty($result = $request->fetch())) {
+		$id_uploader = $result['id'];
+	}
+
+
+	//insertion des données dans la table jeux
+	$sql = 'INSERT INTO jeux
+						(nom, regle, nbr_joueur, id_type, image, date_creation, id_uploader)
+					VALUES
+						(:nom, :regle, :nbr_joueur, :id_type, :image, NOW(), :id_uploader)';
 	$request = $db->prepare($sql);
 	$result = $request->execute(array(
 		"nom" 				=> $_POST['gameName'],
 		"regle"				=> $_POST['regleDuJeu'],
 		"nbr_joueur" 	=> $_POST['nbrJoueur'],
 		"id_type" 		=> $id_type,
-		"image" 			=> $_POST['image']));
+		"image" 			=> $_POST['image'],
+		"id_uploader" => $id_uploader ));
 
+	//on récupère la clé du jeu ajouter pour rediriger l'utilisateur sur sa fiche
 	$request = $db->query('SELECT COUNT(*)-1 AS id_game FROM jeux');
 	$result = $request->fetch();
 	$id_game = $result['id_game'];
@@ -132,12 +156,4 @@ if (!empty($_SESSION) && !empty($_POST['gameName']) && !empty($_POST['gameType']
 	die;
 }
 
-
-
-// Fonction qui retient les valeurs du formulaire
-function valueForm($field) {
-	if (!empty($_POST[$field])) {
-		return $_POST[$field];
-	}
-}
 ?>
