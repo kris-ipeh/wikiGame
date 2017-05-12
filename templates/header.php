@@ -1,6 +1,6 @@
 <?php
 $url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
-//var_dump($url);
+var_dump($url);
 include($url . 'libs/database.php');
 include($url . 'libs/functions.php'); ?>
 

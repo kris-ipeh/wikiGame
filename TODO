@@ -1,13 +1,14 @@
 ////  HTML  CSS   ////
-* Chemins relatifs et absolus
-* redirection vers un site de jeu en ligne
-* rendre l' appli web responsive
 * styliser les fiches profils
 * styliser les fiches jeux
+* rendre l' appli web responsive
+* Chemins relatifs et absolus : http://php.net/manual/fr/function.set-include-path.php
+* redirection vers un site de jeu en ligne
 
 
 ////  PHP  SQL   ////
 * empecher les accès profil et ajout de jeux si pas connectés (faille url)
+* ajouter un .htaccess
 * sécuriser le formulaire et les requêtes
 * Pouvoir modifier le profil
 * Pouvoir modifier un jeu ou le supprimer
