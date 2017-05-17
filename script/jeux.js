@@ -53,7 +53,7 @@ xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
       rawdata = JSON.parse(this.responseText);
 
-    if ((rawdata.main.temp >= 18) && (rawdata.weather[0].icon === '01d' || rawdata.weather[0].icon === '02d' || rawdata.weather[0].icon === '03d')) {
+    if ((rawdata.main.temp >= 18) && (rawdata.weather[0].id >= 800 && rawdata.weather[0].id <= 804)) {
       messagemeteo = "Avec un temps pareil wikiGame vous conseille des activités exterieures...";
     } else {
       messagemeteo = "C'est le temps idéal pour choisir un jeu d\'intérieur!!!";
@@ -67,6 +67,7 @@ xmlhttp.onreadystatechange = function() {
         meteo: Math.round(rawdata.main.temp)+ '°C,',
         temps: rawdata.weather[0].description+ '. ',
         message: messagemeteo
+        //id: rawdata.weather[0].id
       }
     })
   }
