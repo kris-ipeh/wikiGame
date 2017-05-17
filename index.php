@@ -30,9 +30,24 @@
 			</div>
 		</div>
 
-		<!-- IMAGE DE LA SIDEBAR -->
+
 		<div id="aside">
-			<img src="images/snatch_franky.png" alt="Franky four finger - Snatch">
+			<!-- Météo de la ville et proposition -->
+			<div id="meteo">
+				<div id="imagemeteo">
+					<img :src="image" class="iconeMeteo" />
+				</div>
+				<div id="textemeteo">
+					<h3>{{ ville }}</h3>
+					<p>
+						{{ meteo }}	{{ temps }}<br />
+	      		{{ message }}
+	      	</p>
+	      </div>
+			</div>
+
+			<!-- IMAGE DE LA SIDEBAR -->
+			<img src="images/snatch_franky.png" alt="Franky four finger - Snatch" class="francky">
 		</div>
 	</div>
 </section>

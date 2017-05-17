@@ -4,6 +4,7 @@
 		</div>
 	</footer>
 
-	<script type="text/javascript" src="../script/jeux.js"></script>
+  <script type="text/javascript" src="script/vue.js"></script>
+	<script type="text/javascript" src="script/jeux.js"></script>
 </body>
 </html>

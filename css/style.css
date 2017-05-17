@@ -47,7 +47,6 @@ div#title {
 }
 
 #login img:hover {
-	/*padding-bottom: 2px;*/
 	border-bottom: #66b5e9 2px solid;
 }
 
@@ -94,12 +93,8 @@ ul li.type-current a {
 
 .input-search input {
     width: 100%;
-    /*max-width: 100%;
-    min-width: 100%;*/
-    /*margin-left: 20px;*/
     padding: 8px 0px 0px 50px;
     border: none;
-    /*font-size: 1.2em;*/
     color: #FFFFFF;
     background-color: transparent;
 }
@@ -175,16 +170,32 @@ ul li.type-current a {
 		width: 35%;
 	}
 
-	#aside img {
+	#aside .francky {
     overflow: hidden;
     clear: both;
     float: right;
     max-width: 100%;
     height: auto;
     margin-right: -47px;
-    margin-top: 100px;
+    margin-top: 50px;
 	}
 
+	#meteo .iconeMeteo {
+		float: none;
+		width: 120px;
+		padding-top: 15px;
+	}
+
+	#meteo {
+		padding-top: 20px;
+    padding-left: 50px;
+    font-size: 1.3em;
+    display: flex;
+	}
+
+	#textemeteo {
+		margin-left: 10px;
+	}
 
 /*********************************************
 		SECTION LOGIN

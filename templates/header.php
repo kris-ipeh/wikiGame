@@ -16,6 +16,7 @@ include($url . 'libs/functions.php'); ?>
 	<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="/projets_perso/Jeux/images/favicon.ico" /><![endif]-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="/projets_perso/Jeux/css/style.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
 </head>
 
 
