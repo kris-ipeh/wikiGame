@@ -27,7 +27,7 @@
 
 						<!--password-->
 						<div class="form-field">
-							<label for="password">Votre mot de passe : </label>
+							<label for="password">Mot de passe : </label>
 							<input type="password" name="password" id="password" placeholder="Mon mot de passe" required="" />
 						</div>
 					</fieldset>
@@ -61,11 +61,11 @@
 					<div class="champs">
 						<div class="form-field">
 							<span class="erreur"><?= $erreurLogin ;?></span><br />
-							<label for="connectName">nom : </label>
+							<label for="connectName">Nom : </label>
 							<input type="name" name="connectName" id="connectName" value="<?=valueForm('connectName'); ?>"><span class="erreur"><?= $erreurName ;?></span>
 						</div>
 						<div class="form-field">
-							<label for="connectPassword">mot de passe : </label>
+							<label for="connectPassword">Mot de passe : </label>
 							<input type="password" name="connectPassword" id="connectPassword" ><span class="erreur"><?= $erreurPassword ;?></span>
 						</div>
 					</div>

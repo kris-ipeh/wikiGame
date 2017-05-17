@@ -1,6 +1,8 @@
 <?php
 $url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
-var_dump($url);
+//var_dump($url);
+//$path = set_include_path('/projets_perso/Jeux/');
+//var_dump($path);
 include($url . 'libs/database.php');
 include($url . 'libs/functions.php'); ?>
 
