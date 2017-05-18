@@ -17,8 +17,21 @@
 
   <h3>Supprimer votre profil</h3>
   <div class="colonne">
+    <p>
+      Attention cette action effacera toutes vos données personnelles, vous ne pourrez plus récupérer votre compte. En revanche toutes vos contributions seront maintenues.<br />
+    </p>
     <form action="update_profil.php" method="post">
     <fieldset class="fieldset-addGame">
+      <div class="checkbox">
+        <p>Etes vous bien sûr de vouloir supprimer votre compte ?</p>
+        <label>
+          <input type="checkbox" name="supprCompte"> Supprimer mon compte.
+        </label>
+      </div>
+      <div>
+        <label for="mdp">Saisissez votre mot de passe</label>
+        <input type="password" name="mdp" id="mdp">
+      </div>
       <div class="boutons">
         <input type="submit" value="Valider" class="bouton" />
       </div>

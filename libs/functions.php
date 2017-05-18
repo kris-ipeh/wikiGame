@@ -92,15 +92,47 @@ $erreurPassword="";
 	}
 
 
-// PSEUDO SESSION //
-function nomSession() {
-	$result = $_SESSION['auth'];
-	if(!empty($result)) {
-  	foreach ($result as $key => $value) {
-    return $result['name'];
-  	}
+
+	// PSEUDO SESSION //
+	function nomSession() {
+		if(!empty($_SESSION['auth'])){
+			$result = $_SESSION['auth'];
+			if(!empty($result)) {
+		  	foreach ($result as $key => $value) {
+		    return $result['name'];
+		  	}
+			}
+		}
 	}
+
+	function mdpSession() {
+		if(!empty($_SESSION['auth'])){
+			$result = $_SESSION['auth'];
+			if(!empty($result)) {
+		  	foreach ($result as $key => $value) {
+		    return $result['password'];
+		  	}
+			}
+		}
+	}
+
+
+
+//	SUPPRESSION PROFIL  //
+$user = nomSession();
+$mdp = mdpSession();
+if (!empty($_SESSION) && !empty($_POST['supprCompte']) && !empty(sha1($_POST['mdp']) == $mdp)) {
+		$requete = $db->prepare('DELETE FROM utilisateurs WHERE name = "'.$user.'"');
+		$requete->execute();
+		session_unset ();
+		session_destroy();
+		header('location: ../index.php');
+		echo "Votre compte a bien été supprimé.";
+		die;
+} elseif (!empty($_SESSION) && !empty($_POST['supprCompte']) && !empty(sha1($_POST['mdp']) != $mdp)) {
+	echo "Nous n'avons pas pu supprimer votre compte.";
 }
+
 
 
 	//	ADD GAME  //
