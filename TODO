@@ -1,8 +1,13 @@
+////  TODO  ////
+* Chemins relatifs et absolus : http://php.net/manual/fr/function.set-include-path.php
+    +set-include-path ne fonctionne pas à voir si au final mon code n'est pas si pourri!
+
 ////  HTML  CSS   ////
 * styliser les fiches profils
 * styliser les fiches jeux
+    +la base de donnée est à mettre en forme pour les règles du jeu
 * rendre l' appli web responsive
-* Chemins relatifs et absolus : http://php.net/manual/fr/function.set-include-path.php
+    +utiliser bootstrap et sass
 * redirection vers un site de jeu en ligne
 
 
@@ -11,8 +16,8 @@
 
 
 ////  PHP  SQL   ////
-* empecher les accès profil et ajout de jeux si pas connectés (faille url)
 * ajouter un .htaccess
-* sécuriser le formulaire et les requêtes
-* Pouvoir modifier le profil
-* Pouvoir modifier un jeu ou le supprimer
+* empecher les accès url sur profil et add, modif jeux si pas connecté
+* sécuriser les requêtes sql
+* Modifier le profil
+* Modifier un jeu ou le supprimer

@@ -117,10 +117,14 @@ $erreurPassword="";
 	}
 
 
-
-//	SUPPRESSION PROFIL  //
+//  MODIFIER PROFIL  //
 $user = nomSession();
 $mdp = mdpSession();
+//****************** A FAIRE *******************//
+
+
+
+//	SUPPRESSION PROFIL  //
 if (!empty($_SESSION) && !empty($_POST['supprCompte']) && !empty(sha1($_POST['mdp']) == $mdp)) {
 		$requete = $db->prepare('DELETE FROM utilisateurs WHERE name = "'.$user.'"');
 		$requete->execute();
