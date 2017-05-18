@@ -32,9 +32,9 @@ div#title {
 }
 
 #login img {
-	width: 100px;
-	margin-left: 75%;
-	padding: 20px;
+	width: 50px;
+	/*margin-left: 75%;*/
+	margin-top: 10px;
 }
 
 #login a {
@@ -72,8 +72,13 @@ nav ul {
 
 ul li a:hover {
 	color: #66b5e9;
-	padding-bottom: 2px;
-	border-bottom: #66b5e9 2px solid;
+	/*padding-bottom: 2px;
+	border-bottom: #66b5e9 2px solid;*/
+}
+
+a:focus, a:hover {
+	/* color: #23527c; */
+	text-decoration: none;
 }
 
 ul li.type-current a {
@@ -307,8 +312,8 @@ label {
 
 .profil a {
 	font-size: 1.2em;
-	color: blue;
-	padding: 20px;
+	color: #024659;
+	padding: 50px;
 }
 
 /*********************************************

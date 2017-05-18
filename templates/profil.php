@@ -8,12 +8,20 @@
     <div>
       <img id="logoProfil" src="../images/profil.png" alt="logo du profil">
     </div>
-    <div>
-      <a href="add_game.php">Ajouter un jeu</a>
-    </div>
-    <div>
-      <a href="logout.php">Déconnection</a>
-    </div>
+
+      <div class="option">
+        <a href="update_profil.php">Modifier son profil</a>
+      </div>
+      <div class="option">
+        <a href="add_game.php">Ajouter un jeu</a>
+      </div>
+      <div class="option">
+        <a href="update_game.php">Modifier un jeu</a>
+      </div>
+      <div class="option">
+        <a href="logout.php">Déconnection</a>
+      </div>
+
   </div>
 </section>
 

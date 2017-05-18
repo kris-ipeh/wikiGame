@@ -1,5 +1,5 @@
 <?php
-  $url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
+  $url = $_SERVER['DOCUMENT_ROOT'] . '/WikiGame/';
   include($url . 'templates/header.php'); ?>
 
 
