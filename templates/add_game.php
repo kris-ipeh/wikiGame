@@ -1,5 +1,5 @@
  <?php
-  $url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
+  $url = $_SERVER['DOCUMENT_ROOT'] . '/WikiGame/';
   include($url . 'templates/header.php'); ?>
 
 <aside>
@@ -22,7 +22,7 @@
       </div>
       <div>
         <label for="regleDuJeu">Régles du jeu</label>
-        <textarea name="regleDuJeu" id="regleDuJeu" value="<?=valueForm('regleDuJeu'); ?>"><?=valueForm('regleDuJeu'); ?></textarea>
+        <textarea name="regleDuJeu" id="regleDuJeu" value="<?=valueForm('regleDuJeu'); ?>" rows="6" cols="50"><?=valueForm('regleDuJeu'); ?></textarea>
       </div>
       <div>
         <label for="image">Image</label>

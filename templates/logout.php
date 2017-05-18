@@ -1,6 +1,6 @@
 <?php
 
-$url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
+$url = $_SERVER['DOCUMENT_ROOT'] . '/WikiGame/';
 include($url . 'templates/header.php');
 
 // On détruit les variables de notre session
@@ -10,6 +10,6 @@ session_unset ();
 session_destroy ();
 
 // On redirige le visiteur vers la page d'accueil
-header ('location: /projets_perso/Jeux/index.php');
+header ('location: ../index.php');
 
 ?>

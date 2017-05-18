@@ -1,5 +1,5 @@
 <?php
-$url = $_SERVER['DOCUMENT_ROOT'] . '/projets_perso/Jeux/';
+$url = $_SERVER['DOCUMENT_ROOT'] . '/WikiGame/';
 include($url . 'templates/header.php'); ?>
 
 <section id="fiche">
@@ -10,7 +10,7 @@ include($url . 'templates/header.php'); ?>
 			<h1><?= $value['nom']; ?></h1>
 			<div id="content-fiche">
 				<div id="image-fiche">
-					<img src="/projets_perso/Jeux/images/<?= $value['image']; ?>" alt="<?= $value['nom']; ?>" />
+					<img src="/WikiGame/images/<?= $value['image']; ?>" alt="<?= $value['nom']; ?>" />
 				</div>
 				<div id="text-fiche">
 					<span><?= "Jeux de " . $value['type'] . ", " . $value['nbr_joueur'] . " joueurs minimum."; ?></span><br />

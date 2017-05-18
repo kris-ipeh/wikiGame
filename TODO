@@ -6,14 +6,13 @@
 * redirection vers un site de jeu en ligne
 
 
+////  JAVASCRIPT   ////
+* animations sur page d'acceuil
+
+
 ////  PHP  SQL   ////
 * empecher les accès profil et ajout de jeux si pas connectés (faille url)
 * ajouter un .htaccess
 * sécuriser le formulaire et les requêtes
 * Pouvoir modifier le profil
 * Pouvoir modifier un jeu ou le supprimer
-
-
-////  JAVASCRIPT   ////
-* animations sur page d'acceuil
-

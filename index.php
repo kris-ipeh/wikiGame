@@ -17,8 +17,8 @@
 
 							<li>
 								<div class="game">
-									<a href="/projets_perso/Jeux/templates/fiche.php?id=<?= $key; ?>" title="<?= $value['nom']; ?>">
-									<img src="/projets_perso/Jeux/images/<?= $value['image']; ?>" alt="<?= $value['nom']; ?>" /><br />
+									<a href="/WikiGame/templates/fiche.php?id=<?= $key; ?>" title="<?= $value['nom']; ?>">
+									<img src="/WikiGame/images/<?= $value['image']; ?>" alt="<?= $value['nom']; ?>" /><br />
 									<strong class="nom"><?= $value['nom']; ?></strong><br />
 									<span id="nbr_joueur"><?= $value['nbr_joueur'] . ' joueurs minimum, '; ?></span><br />
 									<blockquote id="type"><?= 'jeu de ' . $value['type'] . '.'; ?></blockquote></a>
@@ -47,7 +47,7 @@
 			</div>
 
 			<!-- IMAGE DE LA SIDEBAR -->
-			<img src="images/snatch_franky.png" alt="Franky four finger - Snatch" class="francky">
+			<img src="/WikiGame/images/snatch_franky.png" alt="Franky four finger - Snatch" class="francky">
 		</div>
 	</div>
 </section>
