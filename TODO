@@ -1,6 +1,10 @@
 ////  TODO  ////
+
+* OPTIMISATION DU CODE
+
 * Chemins relatifs et absolus : http://php.net/manual/fr/function.set-include-path.php
     +set-include-path ne fonctionne pas à voir si au final mon code n'est pas si pourri!
+
 
 ////  HTML  CSS   ////
 * styliser les fiches profils

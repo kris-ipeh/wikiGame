@@ -10,6 +10,7 @@ include($url . 'libs/functions.php');
 <html lang="fr">
 <head>
 	<title>wikiGame</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="/WikiGame/images/favicon.png" />
 	<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="/WikiGame/images/favicon.ico" /><![endif]-->
