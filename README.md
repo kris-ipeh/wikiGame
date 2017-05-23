@@ -1,11 +1,18 @@
-# wikiGame
-Projet personnel ayant pour but de lister des jeux avec leurs règles et le nombre de joueurs minimum.
+@title: wikiGame
+@type: projet perso, formation
+@author: chrisparis.eh@gmail.com
+@date: 2017
 
-On pourra se logger et ainsi rajouter des jeux à la base de donnée.
-Un moteur de recherche par le nom du jeu est présent.
+- WikiGame -
 
-La base de donnée de base à importer se trouve dans libs/jeux.sql.
+Description :
+  Appli qui liste une série de jeux et affiche leurs règles...
 
-Pour l'instant les chemins ne sont pas bons, pour le tester, il suffit de placer le dossier Jeux
-dans : projets_perso (dossier créé à la racine de son localhost)
+Instructions :
+  * Cloner le projet dans un dossier Wikigame à la racine de son localhost.
+  * La base de donnée à importer se trouve dans libs/jeux.sql.
 
+Fonctions :
+  * Un moteur de recherche par le nom du jeu est présent (php, mysql).
+  * Un formulaire d'inscription et connexion permet d'accéder à un espace privé ou l'on peut ajouter des jeux sur la base de donnée (php, mysql).
+  * Affichage météo et suggestion de jeux en fonction du temps et de l'endroit (javascript).
